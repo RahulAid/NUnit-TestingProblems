@@ -2,13 +2,16 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static int swapNibbles(int x)
         {
-            Console.WriteLine("Enter a value: ");
-            double n = Convert.ToInt32(Console.ReadLine());
+            return ((x & 0x0F) << 4 | (x & 0xF0) >> 4);
+        }
 
-            double SquareRoot = Math.Sqrt(n);
-            Console.WriteLine("\nThe Square Root of {0} is : {1}", n, SquareRoot);
+        public static void Main()
+        {
+            Console.WriteLine("Enter a Value to Swap: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nSwapped Number is: {0}", swapNibbles(n));
         }
     }
 }
